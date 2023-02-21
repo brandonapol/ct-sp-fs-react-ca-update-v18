@@ -1,12 +1,12 @@
 export const server_calls = {
     get: async () => {
-        const response = await fetch(`https://plankton-app-46k8b.ondigitalocean.app/api/contacts`,
+        const response = await fetch(`http://127.0.0.1:5000/api/contacts`,
         {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
             },
-            mode: "cors",
         });
 
         if (!response.ok){
@@ -17,14 +17,13 @@ export const server_calls = {
     },
 
     create: async (data: any = {}) => {
-        const response = await fetch(`https://plankton-app-46k8b.ondigitalocean.app/api/contacts`,
+        const response = await fetch(`http://127.0.0.1:5000/api/contacts`,
         {
-            method: "PUT",
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'access-control-allow-origin':	'*',
             },
-            mode: "cors",
             body: JSON.stringify(data)
         })
 
@@ -38,7 +37,7 @@ export const server_calls = {
     update: async (id:string, data: any = {}) => {
         const response = await fetch(`https://plankton-app-46k8b.ondigitalocean.app/api/contacts/${id}`,
         {
-            method: "POST",
+            method: "PUT",
             headers: {
                 'Content-Type': 'application/json',
             },

@@ -16,7 +16,7 @@ const columns: GridColDef[] = [
 function DataTable() {
   const [ open, setOpen ] = useState(false);
   const { contactData, getData } = useGetData();
-  const [ selectionModel, setSelectionModel ] = useState<any>([])
+  const [ selectionModel, setSelectionModel ] = useState<string[]>([])
 
   const handleOpen = () => {
     setOpen(true)
@@ -27,7 +27,7 @@ function DataTable() {
   }
 
   const deleteData = () => {
-    server_calls.delete(selectionModel);
+    server_calls.delete(selectionModel[0]);
     getData();
     console.log(`Selection model: ${selectionModel}`)
     setTimeout( () => { window.location.reload() }, 500)

@@ -9,8 +9,7 @@ import { chooseName, chooseEmail, chooseAddress, choosePhone } from "../redux/sl
 // interfaces
 
 interface ContactFormProps {
-  id?: string,
-  data?: {}
+  id?: string[]
 }
 
 const ContactForm = (props:ContactFormProps) => {
@@ -20,9 +19,10 @@ const ContactForm = (props:ContactFormProps) => {
 
   const onSubmit = (data: any, event: any) => {
     console.log(`ID: ${typeof props.id}`);
+    console.log(props.id)
     console.log(data)
-    if (props.id) {
-      server_calls.update(props.id, data)
+    if (props.id && props.id.length > 0) {
+      server_calls.update(props.id[0], data)
       console.log(`Updated: ${ data.name } ${ props.id }`)
       // setTimeout(() => {window.location.reload()}, 10000);
       event.target.reset()

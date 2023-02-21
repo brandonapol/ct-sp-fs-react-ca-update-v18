@@ -1,3 +1,5 @@
+
+
 export const firebaseConfig = {
   apiKey: "AIzaSyA0udHJNszWvv2H5ElBIk-7L6tHVoUHYUA",
   authDomain: "sp-fs-react-update-v18.firebaseapp.com",

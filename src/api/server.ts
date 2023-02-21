@@ -35,11 +35,12 @@ export const server_calls = {
     },
 
     update: async (id:string, data: any = {}) => {
-        const response = await fetch(`https://plankton-app-46k8b.ondigitalocean.app/api/contacts/${id}`,
+        const response = await fetch(`http://127.0.0.1:5000/api/contacts/${id}`,
         {
-            method: "PUT",
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
             },
             body: JSON.stringify(data)
         })

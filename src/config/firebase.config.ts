@@ -1,7 +1,7 @@
 
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyA0udHJNszWvv2H5ElBIk-7L6tHVoUHYUA",
+  apiKey: process.env.API_KEY,
   authDomain: "sp-fs-react-update-v18.firebaseapp.com",
   projectId: "sp-fs-react-update-v18",
   storageBucket: "sp-fs-react-update-v18.appspot.com",
